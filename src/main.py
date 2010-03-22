@@ -1,8 +1,3 @@
-'''
-Created on 22 Feb 2010
-
-@author: Mark
-'''
 #import cgi
 import os
  

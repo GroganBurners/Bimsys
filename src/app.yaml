@@ -1,4 +1,4 @@
-application: bimsys
+application: groganburners
 version: 1
 runtime: python
 api_version: 1
@@ -15,9 +15,10 @@ handlers:
   
 - url: /js
   static_dir: js
- 
-- url: /admin
-  script: admin.py
+  
+- url: /login.*
+  script: login.py
   
 - url: /.*
-  script: main.py
+  script: bimsys.py
+  

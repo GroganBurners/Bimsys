@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/119/trunk/groganburners/src
+END
+app.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/114/trunk/groganburners/src/app.yaml
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/98/trunk/groganburners/src/.project
+END
+index.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/99/trunk/groganburners/src/index.yaml
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/106/trunk/groganburners/src/log4j.properties
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/119/trunk/groganburners/src/index.html
+END
+main.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/110/trunk/groganburners/src/main.py
+END
+.pydevproject
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/119/trunk/groganburners/src/.pydevproject
+END
+asklogin.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/100/trunk/groganburners/src/asklogin.py
+END

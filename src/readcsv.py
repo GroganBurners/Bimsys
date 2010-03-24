@@ -8,8 +8,7 @@ f  = open('ServiceandRepair.csv', "rb")
 reader = csv.reader(f)
 
 
-dbfields = []
-dbattributes = []
+column = []
 
 rownum = 0
 for row in reader:
@@ -17,12 +16,12 @@ for row in reader:
     if rownum == 0:
         header = row
     elif rownum >= 1:
-         column = row
-         #print '%-8s: %s' % (header[colnum], col)
+         column += row
          rownum += 1
+         #print '%-8s: %s' % (header[colnum], col)
     rownum += 1
 
-print header[5]
-print column[5][5]
+print header[2]
+print column[2][2]
 
 f.close()

@@ -1,9 +1,11 @@
 Overall TODO:
 ==============
 * Mapping/ Route Selection
-* Graphing of Burner meter values
 * Two modules in Sidebar (Links and Certifcations[OFTEC & RGI logos])
-* Dashboards
+* Dashboards - customer and admin
+* Graphing - Efficiency Line Graph (over time) is main graph on customer page
+* Do Service interval ( set days to service, 1/4 of year as values up to 8/4) Date Dropdown?
+* Emailing function - Option to mail out efficency reports, service times, etc
 
 Files yet to be completed (TODO at top of individual files):
 ============================================================

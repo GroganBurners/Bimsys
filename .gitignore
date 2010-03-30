@@ -1,1 +1,4 @@
 git_commands*
+*.pyc
+*~
+.DS_Store

@@ -103,8 +103,13 @@ def main():
                                   ('.gas.html',Gas),
                                   ('.contact.html',Contact),
                                   ('.register.html',Register),
-                                  ('.admin.html',admin.Admin),
                                   ('.customerDetails.html',customerDetails),
+                                  ('.admin.html',admin.Admin),
+                                  ('.oilService.html',admin.oilService),
+                                  ('.oilRepair.html',admin.oilRepair),
+                                  ('.gasService.html',admin.gasService),
+                                  ('.gasRepair.html',admin.gasRepair),
+                                  
                                   
                                   
                                   ('.*',MainPage)

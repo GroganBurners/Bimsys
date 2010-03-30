@@ -29,7 +29,25 @@ class Admin(webapp.RequestHandler):
         
 class oilService(webapp.RequestHandler):
     def get(self):
-        customerList.filter(type, '1')
+        customerList.filter('cust_type=', '1')#Filter the results according to the type of customer, then send the results.
         path = os.path.join(os.path.dirname(__file__)+'/templates/admin/','base1Column.html')
         self.response.out.write(template.render(path,{'results':results}))
+        
+class oilRepair(webapp.RequestHandler):
+    def get(self):
+        customerList.filter('cust_type=', '2')
+        path = os.path.join(os.path.dirname(__file__)+'/templates/admin/','base1Column.html')
+        self.response.out.write(template.render(path, {'results':results}))
+        
+class gasService(webapp.RequestHandler):
+    def get(self):
+        customerList.filter('cust_type=', '3')
+        path = os.path.join(os.path.dirname(__file__)+'/templates/admin/','base1Column.html')
+        self.response.out.write(template.render(path, {'results':results}))
+        
+class gasRepair(webapp.RequestHandler):
+    def get(self):
+        customerList.filter('cust_type=', '4')
+        path = os.path.join(os.path.dirname(__file__)+'/templates/admin/','base1Column.html')
+        self.request.out.write(template.render(path, {'results':results}))
         

@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-# Copyright Grogan Burner Services Ltd. 2010
-# Licensed under GPL v3 or higher
-
 #import cgi
 import os
 #We will use the app.yaml file to point toward this file for all requests
@@ -48,22 +44,35 @@ class Signin(webapp.RequestHandler):
         #Forward user to password retrieval page if passwords are incorrect
         #checkUser(self.request.get('email'))
         thisEmail = self.request.get('email')
-        userPassword = datastore.Customer.all()
-        userPassword.filter("cust_email =", thisEmail)
-        
-        results = userPassword.fetch(1)
-        thisPassword = "gonnaChange"
-        
-        for p in results:
+        entity = datastore.Customer.all().filter("cust_email =", thisEmail)
+        thisEntity = entity.fetch(1)
+        for p in thisEntity:
+            customerName = p.cust_first_name
             thisPassword = p.cust_password
+            thisBoilerName = p.cust_boiler_name
+            thisAddress1 = p.cust_address1
+            thisAddress2 = p.cust_address2
+            thisAddress3 = p.cust_address3
+            thisHomePhone = p.cust_home_phone
+            thisMobilePhone = p.cust_mobile_phone
+            thisEmail = p.cust_email
+            thisType = p.cust_type##If type == 1, then type = Gas Service 2,
+        #Home Phone
+        #Mobile Phone
+        #Email
+        #Boiler Type
+        #Boiler Efficiency
+        #Service Due
+        #Request Attention
+        
+        
+        
         
         if self.request.get('password') == thisPassword:
-            path = os.path.join(os.path.dirname(__file__)+'/templates/','userDashboard.html')
+            self.response.out.write(template.render(os.path.dirname(__file__)+'/templates/userDashboard.html',{}))
             
         elif self.request.get('password') != thisPassword:
-            path = os.path.join(os.path.dirname(__file__)+'/templates/','tryAgain.html')
-        
-        self.response.out.write(template.render(path,{}))
+            self.response.out.write(template.render(os.path.dirname(__file__)+'/templates/tryAgain.html',{}))        
 
            
 class customerDetails(webapp.RequestHandler):
@@ -72,6 +81,12 @@ class customerDetails(webapp.RequestHandler):
         self.response.out.write(template.render(path,{}))
         #Need to block access...
             
+class mapTest(webapp.RequestHandler):
+    def get(self):
+        path = os.path.join(os.path.dirname(__file__)+'/templates/','mapTest.html')
+        self.response.out.write(template.render(path,{}))
+        
+        
 class Register(webapp.RequestHandler):
     def get(self):
         path = os.path.join(os.path.dirname(__file__)+'/templates/','register.html')
@@ -113,6 +128,7 @@ def main():
                                   ('.oilRepair.html',admin.oilRepair),
                                   ('.gasService.html',admin.gasService),
                                   ('.gasRepair.html',admin.gasRepair),
+                                  ('.mapTest.html',mapTest),
                                   
                                   
                                   

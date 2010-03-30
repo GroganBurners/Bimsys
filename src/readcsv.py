@@ -1,21 +1,22 @@
 # -*- coding: utf-8 -*-
-# Copyright Grogan Burner Services Ltd. 
-# Written by Neil Grogan
+# Copyright Grogan Burner Services Ltd. 2010
 # Licensed under GPL v3 or higher
+
+# TODO:
+# Split Strings (name, address etc) for input into DB
+# Cater to both types of files (services and Repairs have different fields)
+# Match DB field to input field (almost complete)
+# Write DB to CSV File
 
 # Import Mark's database code
 #import datastore
 import csv
 import cgi
 import os
-#from google.appengine.ext import webapp
-#from google.appengine.ext.webapp.util import run_wsgi_app
-#from google.appengine.ext import db
-#from google.appengine.ext.webapp import template
 
 def readInCSVFile():
-	# Open the file and apply CSV reader to it
-	f  = open('ServiceandRepair.csv', "rb")
+	# Open the file and apply CSV reader to it - will be upload field on AppEngine
+	f  = open('OilService.csv', "rb")
 	reader = csv.reader(f)
 	
 	# Start a dictionary of columns, where we will store all the CSV rows
@@ -28,15 +29,16 @@ def readInCSVFile():
 	    	# Assign first row to be header (eg. Customer, Address, etc) 
 	        header = row
 	    elif rownum >= 1:
-	    	#Append each CSV record to Dictionary
+	    	#Append each CSV record to List
 	        column.append(row) 
 	        # Iterate row number to process next record
 	        rownum += 1
 	        #print '%-8s: %s' % (header[colnum], col) # debug line
 	    rownum += 1
 	
-	print header[6] # debug line
-	print column[90][6] # debug line
+	print header[1] # debug line
+	print column[90][1] # debug line
+	print column[20][1] # debug line
 	
 	# Call to process stored variables in Database
 	# processCSVtoDB()

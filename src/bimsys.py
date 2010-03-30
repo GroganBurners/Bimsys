@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+# Copyright Grogan Burner Services Ltd. 2010
+# Licensed under GPL v3 or higher
+
 #import cgi
 import os
 #We will use the app.yaml file to point toward this file for all requests

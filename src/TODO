@@ -1,0 +1,10 @@
+Overall TODO:
+==============
+* Mapping/ Route Selection
+* Graphing of Burner meter values
+* Two modules in Sidebar (Links and Certifcations[OFTEC & RGI logos])
+* Dashboards
+
+Files yet to be completed (TODO at top of individual files):
+============================================================
+src/readcsv.py

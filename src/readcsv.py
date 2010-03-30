@@ -4,7 +4,7 @@
 # Licensed under GPL v3 or higher
 
 # Import Mark's database code
-import datastore
+#import datastore
 import csv
 import cgi
 import os
@@ -35,8 +35,8 @@ def readInCSVFile():
 	        #print '%-8s: %s' % (header[colnum], col) # debug line
 	    rownum += 1
 	
-	print header[2] # debug line
-	print column[90][2] # debug line
+	print header[6] # debug line
+	print column[90][6] # debug line
 	
 	# Call to process stored variables in Database
 	# processCSVtoDB()
@@ -44,7 +44,7 @@ def readInCSVFile():
 	# Close the file  
 	f.close()
 	
-def processCSVtoDB():
+#def processCSVtoDB():
 	#Start at 0 before Iteration
 	#headerno = 0
 	#colno = 0
@@ -57,50 +57,55 @@ def processCSVtoDB():
 		#elif rownum >= 1:
 			## Test if the customer ID is unique, not in use (yet)
 			##if (custid != row[0])
-			#cust_id = column[rownum][0]
-			#cust_type
-			#cust_date
+			#cust_id = column[rownum][]
+			#cust_type = column[rownum][] #Oil or gas? No info
+			#cust_date = column[rownum][0]
+			
 			## TODO Split strings after space
-			#cust_first_name =
-			#cust_last_name = 
+			#cust_first_name = column[rownum][1] 
+			#cust_last_name = column[rownum][1]
 			## END TODO
-			#cust_password =
-			#cust_address1 =
-			#cust_address2 =
-			#cust_address3 =
-			#cust_county =
-			#cust_geocode = '0.0,0.0'
-			#cust_phone =
-			#cust_mobile_phone =
+			
+			##Set Password to phone number
+			#cust_password = null # Don't have info
+			
+			## TODO Split strings after space
+			#cust_address1 = column[rownum][2]
+			#cust_address2 = column[rownum][2]
+			#cust_address3 = column[rownum][2]
+			#cust_county = column[rownum][2]
+			## END TODO
+			
+			#cust_geocode = '0.0,0.0' # Don't have info
+			#cust_phone = null # Don't have info
+			#cust_mobile_phone = null # Don't have info
 			
 			###########
 			## Services
 			###########
-			#type_of_work = #Service/Install/Repair/Other
-			#next_service = #Date of next service due
-    			#notes = 
+			#type_of_work = column[rownum][3] #Service/Install/Repair/Other
+			#next_service = column[rownum][4] #Date of next service due
+    			#notes = column[rownum][5]
     			
 			#####################
 			## Service Statistics
 			#####################
-			#o2 = 
-    			#coppm = 
-    			#co2percent = 
-    			#flumeTemp = 
-    			#efficiency = 
-    			#xsair = 		 
+			#o2 = column[rownum][6]
+    			#coppm = column[rownum][7]
+    			#co2percent = column[rownum][8]
+    			#flumeTemp = column[rownum][9]
+    			#efficiency = column[rownum][10]
+    			#xsair = column[rownum][11]
+		 
 			## Debug printout
 			#print column[colno][headerno]
 	
-			#colno++
-		#headerno++
+			#colno+= 1
 
 #####################
-## Export DB to CSV
+## Export DB to CSV - using CSV Writer Module
 ####################
-def processCSVtoDB():
-
-
+#def processCSVtoDB():
 
 if __name__ == "__main__":
     readInCSVFile()

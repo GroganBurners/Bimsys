@@ -49,5 +49,5 @@ class gasRepair(webapp.RequestHandler):
     def get(self):
         customerList.filter('cust_type=', '4')
         path = os.path.join(os.path.dirname(__file__)+'/templates/admin/','base1Column.html')
-        self.request.out.write(template.render(path, {'results':results}))
+        self.response.out.write(template.render(path, {'results':results}))
         

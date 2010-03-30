@@ -28,10 +28,12 @@ Other:		Based lightly on the mightly template by kuler.com
 <link rel="alternate" href="" title="RSS Feed" type="application/rss+xml" />
 
 <link href="../css/styles.css" rel="stylesheet" type="text/css" />
-
+{% block header %}
+{% endblock %}
 </head>
-
+{% block changeBody %}
 <body>
+{% endblock %}
     <div id="header">
         <!-- /subContainer -->
         <div class="subContainer">

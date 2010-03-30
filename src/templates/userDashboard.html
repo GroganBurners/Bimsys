@@ -1,6 +1,67 @@
-{% extends "base.html" %}
-{% block title %}User Dashboard{% endblock %}
+{%extends "base.html"%}
+{%block title%}User Dashboard{% endblock %}
+{%block header%}
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+  function initialize() {
+    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var myOptions = {
+      zoom: 8,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+  }
 
+</script>
+{%endblock%}
+{%block changeBody%}
+<body onload="initialize()">
+{%endblock%}
 {% block content %}
-<p>Successfully logged into user dashboard</p>
+<table cellpadding="0" cellspacing="0" style="width: 100%">
+	<tr>
+		<td style="width: 300px">Name</td>
+		<td rowspan="13">
+		<div id="map_canvas" style="width:100%; height:100%"></div></td>
+	</tr>
+	<tr>
+		<td style="width: 369px">Boiler Model</td>
+	</tr>
+	<tr>
+		<td style="width: 369px">Address1</td>
+	</tr>
+	<tr>
+		<td style="width: 369px">Address2</td>
+	</tr>
+	<tr>
+		<td style="width: 369px">Address3</td>
+	</tr>
+	<tr>
+		<td style="width: 369px">Home Phone</td>
+	</tr>
+	<tr>
+		<td style="width: 369px">Mobile Phone</td>
+	</tr>
+	<tr>
+		<td style="width: 369px">Email</td>
+	</tr>
+	<tr>
+		<td style="width: 369px">Boiler Type</td>
+	</tr>
+	<tr>
+		<td style="width: 369px">Boiler Efficiency</td>
+	</tr>
+	<tr>
+		<td style="width: 369px">Service Due</td>
+	</tr>
+	<tr>
+		<td style="width: 369px">Request Attention</td>
+	</tr>
+	<tr>
+		<td style="width: 369px">Edit Details</td>
+	</tr>
+</table>
+
 {% endblock %}

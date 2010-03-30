@@ -1,0 +1,10 @@
+#######################
+# PULL CHANGES FROM NEIL
+#######################
+git pull ../Neil/ neil
+
+#######################
+# PULL CHANGES FROM RUAIRI
+#######################
+git pull ../Ruairi/ ruairi
+

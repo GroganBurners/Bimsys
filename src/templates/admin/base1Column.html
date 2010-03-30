@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Home | Grogan Burners</title>
+
+<!-- - - - - - - - - - - - - - - - - - - - -
+
+Title :		Grogan Burners
+Authors :	Neil Grogan, Ruairi MacTiernan, Mark Howard
+URL :		groganburners.appspot.com
+Other:		Based lightly on the mightly template by kuler.com
+
+- - - - - - - - - - - - - - - - - - - - - -->
+
+<!-- Meta Tags -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="robots"      content="index, follow" />
+<meta name="author"      content="" />
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="" />
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles2.css" media="all" type="text/css" />
+
+<!-- RSS -->
+<link rel="alternate" href="" title="RSS Feed" type="application/rss+xml" />
+
+
+<style type="text/css" title="currentStyle"> 
+			@import "js/dataTables/css/demo_page.css";
+			@import "js/dataTables/css/demo_table.css";
+		</style> 
+		<script type="text/javascript" src="/js/dataTables/js/jquery.js"></script> 
+		<script type="text/javascript" src="/js/dataTables/js/jquery.dataTables.js"></script>
+		<script type="text/javascript" src="/js/greybox/greybox.js"></script>
+		
+		<script type="text/javascript" charset="utf-8"> 
+			$(document).ready(function() {
+				$('#example').dataTable();
+			} );
+		</script>
+		
+		<link href="js/greybox/greybox.css" rel="stylesheet" type="text/css" media="all" />
+    	<script type="text/javascript">
+      		var GB_ANIMATION = true;
+      		$(document).ready(function(){
+        	$("a.greybox").click(function(){
+         	var t = this.title || $(this).text() || this.href;
+          	GB_show(t,this.href,550,750);
+          	return false;
+        	});
+      	});
+    	</script>
+
+</head>
+
+
+<body>
+    <div id="header">
+        <!-- /subContainer -->
+        <div class="subContainer">
+            <div id="logo">
+            	<img alt="Grogran Burners logo" height="64" src="../images/logo.png" width="393" /></div><!-- /logo -->
+        </div>
+    </div><!-- header -->
+    
+    <div id="navigation">
+    <ul>
+        <li><a href="../">Home</a></li>
+        <li><a href="routing.html">Routing</a></li>
+        <li><a href="oilService.html">Oil Service</a></li>
+        <li><a href="oilRepair.html">Oil Repairs</a></li>
+        <li><a href="gasService.html">Gas Service</a></li>
+        <li><a href="gasRepair.html">Gas Repairs</a></li>
+        <li><a href="correspondance.html">Correspondance</a></li>
+    </ul>
+    </div><!-- /navigation -->
+    
+    <div id="container">
+    	{% block content %}
+    	<h1>All Customers</h1>
+    		<table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+	    		<thead>
+	    		<tr>
+		    		<th>Customer Name:</th>
+		    		<th>Location:</th>
+		    		<th>Phone:</th>
+		    		<th>Type:</th>
+		    		<th>Map:</th>
+	    		</tr>
+	    		</thead>
+	    		{% for result in results %}
+	    		<tr>
+		    		<td><a href="customerDetails.html" class="greybox">{{ result.cust_last_name }} {{ result.cust_first_name }}</a></td>
+		    		<td>{{ result.cust_address3 }}</td>
+		    		<td>{{ result.cust_phone }}</td>
+		    		<td>{{ result.cust_type }}</td>
+		    		<td><input name="{{result.cust_email}}" type="checkbox" /></td>
+	    		</tr>
+	    		{% endfor %}
+    			</table>
+    			
+    			<div id="bottom">
+    			<br />
+    			<br />
+    			<p><a href="customerMaps.html" >Click here to view best route</a></p> 
+				<p>Customers display RED if signed up but not validated</p> 
+				<p>Customers display YELLOW if signed up, validated but require attention</p> 
+				<p>Customers display ORANGE if signed up, validated , service due</p> 
+				<p>Customers display GREEN if OK</p> 
+				
+				</div>
+    		{% endblock %}
+    	</div><!-- /primaryContent -->
+    	
+    	
+    
+	
+	
+    <div id="footer">
+        <ul>
+            <li id="copyright"><a href="admin.html">© Grogan Burners</a></li>
+            <li id="links">
+                <ul>
+                    <li><a href="http://validator.w3.org/check/referer">XHTML</a> 
+					|</li>
+                    <li><a href="http://jigsaw.w3.org/css-validator/check/referer">
+					CSS</a></li>
+				</ul>
+            </li>
+        </ul>
+    </div><!-- /footer -->
+</body>
+</html>

@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright Grogan Burner Services Ltd. 
-# Written by Neil Grogan
+# Copyright Grogan Burner Services Ltd. 2010
 # Licensed under GPL v3 or higher
 
 # TODO:
@@ -30,7 +29,7 @@ def readInCSVFile():
 	    	# Assign first row to be header (eg. Customer, Address, etc) 
 	        header = row
 	    elif rownum >= 1:
-	    	#Append each CSV record to Dictionary
+	    	#Append each CSV record to List
 	        column.append(row) 
 	        # Iterate row number to process next record
 	        rownum += 1
@@ -38,7 +37,8 @@ def readInCSVFile():
 	    rownum += 1
 	
 	print header[1] # debug line
-	print column.values() # debug line
+	print column[90][1] # debug line
+	print column[20][1] # debug line
 	
 	# Call to process stored variables in Database
 	# processCSVtoDB()

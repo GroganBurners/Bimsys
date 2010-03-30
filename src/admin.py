@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+# Copyright Grogan Burner Services Ltd. 2010
+# Licensed under GPL v3 or higher
+
+
 #Imports Start
 import os
 from google.appengine.ext import webapp

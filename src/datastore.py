@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+# Copyright Grogan Burner Services Ltd. 2010
+# Licensed under GPL v3 or higher
+
 from google.appengine.ext import db
 
 class Customer (db.Model):

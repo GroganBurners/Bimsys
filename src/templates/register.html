@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}Register interest in becoming a customer{% endblock %}
+
+{% block content %}
+
+<h2 style="height: 30px">Customer Register</h2>
+			<!-- /comments -->
+			<div>
+				<form method="post" action="">
+				
+					<table style="width: 100%">
+						<tr>
+							<td class="style2">First Name:*</td>
+							<td class="style2"><input name="first_name" type="text" />&nbsp;</td>
+						</tr>
+						<tr>
+							<td class="style2">Second Name:*</td>
+							<td class="style2"><input name="last_name" type="text" />&nbsp;</td>
+						</tr>
+						<tr>
+							<td class="style2">Email:*</td>
+							<td class="style2"><input name="email" type="text" />&nbsp;</td>
+						</tr>
+						<tr>
+							<td class="style2">Password:*</td>
+							<td class="style2"><input name="password" type="password" />&nbsp;</td>
+						</tr>
+						<tr>
+							<td class="style2">Type:</td>
+							<td class="style2">Oil: <input checked="checked" name="Radio1" type="radio" style="width: 28px" />Gas: <input name="Radio1" style="width: 25px" type="radio" /></td>
+						</tr>
+						<tr>
+							<td class="style2">Address line 1:</td>
+							<td class="style2"><input name="address1" type="text" />&nbsp;</td>
+						</tr>
+						<tr>
+							<td class="style2">Address line 2:</td>
+							<td class="style2"><input name="address2" type="text" />&nbsp;</td>
+						</tr>
+						<tr>
+							<td class="style2">Address line 3:</td>
+							<td class="style2"><input name="address3" type="text" />&nbsp;</td>
+						</tr>
+						
+						<tr>
+							<td class="style2">County:</td>
+							<td class="style2"><input name="county" type="text" />&nbsp;</td>
+						</tr>
+						<tr>
+							<td class="style2">Phone:</td>
+							<td class="style2"><input name="phone" type="text" />&nbsp;</td>
+						</tr>
+						<tr>
+							<td class="style2">Mobile phone:</td>
+							<td class="style2"><input name="mobile_phone" type="text" />&nbsp;</td>
+						</tr>
+						<tr>
+							<td class="style2">&nbsp;</td>
+							<td class="style2">&nbsp;</td>
+						</tr>
+						<tr>
+							<td class="style2">&nbsp;</td>
+							<td class="style2">&nbsp;</td>
+						</tr>
+						<tr>
+							<td class="style2">* required.</td>
+							<td class="style2">
+							<input name="Submit1" type="submit" value="submit" /></td>
+						</tr>
+					</table>
+				
+				</form>
+			</div>
+			{% endblock %}

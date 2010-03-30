@@ -1,0 +1,61 @@
+{% extends "base1Column.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+
+<h2>Viewing all current customers</h2>
+
+
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+	<thead>
+		<tr>
+			<th style="width: 180px">Name:</th>
+			<th style="width: 500px">Location</th>
+			<th style="width: 86px">Phone:</th>
+			<th style="width: 80px">Type:</th>
+			<th>Class:</th>
+			<th>Map:</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="width: 180px"><a href="customerDetails.html" title="Map" class="greybox">Milo Grogan</a></td>
+			<td style="width: 500px"><a href="html/mapsDemo.html" title="Map" class="greybox">29 Baller Avenue</a></td>
+			<td style="width: 86px">123456</td>
+			<td style="width: 80px">Service</td>
+			<td class="style1">1</td>
+			<td class="style1"><input name="Checkbox1" type="checkbox" /></td>
+		</tr>
+		<tr>
+			<td style="width: 180px"><a href="customerDetails.html" title="Map" class="greybox">Neelo Nogan</a></td>
+			<td style="width: 500px"><a href="html/mapsDemo.html" title="Map" class="greybox">28 Baller Avenue</a></td>
+			<td style="width: 86px">123456</td>
+			<td style="width: 80px">Service</td>
+			<td class="style1">1</td>
+			<td class="style1"><input name="Checkbox1" type="checkbox" /></td>
+		</tr>
+		<tr>
+			<td width: 180px"><a href="customerDetails.html" title="Map" class="greybox">Gilo Bogan</a></td>
+			<td style="width: 500px"><a href="html/mapsDemo.html" title="Map" class="greybox">27 Baller Avenue</a></td>
+			<td style="width: 86px">123456</td>
+			<td style="width: 80px">Service</td>
+			<td class="style1">1</td>
+			<td class="style1"><input name="Checkbox1" type="checkbox" /></td>
+		</tr>
+		
+		
+	</tbody>
+</table>
+
+
+<p><a href="customerMaps.html">Click here to view best route</a></p>
+<p>Customers display RED if signed up but not validated</p>
+<p>Customers display YELLOW if signed up, validated but require attention</p>
+<p>Customers display ORANGE if signed up, validated , service due</p>
+<p>Customers display GREEN if OK</p>
+
+</body>
+
+</html>
+
+{% endblock %}

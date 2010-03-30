@@ -7,31 +7,15 @@ handlers:
 - url: /css
   static_dir: css
   
-<<<<<<< HEAD
 - url: /images
   static_dir: images
+  
+- url: /js
+  static_dir: js
   
 - url: /html
   static_dir: html
   
-- url: /js
-  static_dir: js
-  
-- url: /login.*
-  script: login.py
-  
 - url: /.*
   script: bimsys.py
-=======
-- url: /img
-  static_dir: img
-  
-- url: /js
-  static_dir: js
-
-- url: /.*
-  script: main.py
-
-
->>>>>>> d28aed9e5f8b1199d299ee99dac314cacf8cbb72
   

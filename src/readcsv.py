@@ -47,43 +47,52 @@ def processCSVtoDB():
 	#print new[1] # debug line
 	
 	
-	################################
+	"""
 	## ASSIGN VALUES INTO DATABASE
-	################################
+	"""
 	
 	
 	#Reset at 0 before Iteration
-	rownum = 0
+	lineno = 0
 	
 	print 'Getting to for loop before assigning values to db' # debug
 	#Loop through all records, assigning correct values to DB fields
-	for row in reader:
+	for lines in column:
 		print 'Enter for loop to assign value to db' # debug line
 		# Row 0 is header, so throw away
-		if rownum == 0: 
+		if lineno == 0: 
 			print 'Header not needed for database'
-		elif rownum >= 1:
+		elif lineno >= 1:
 			# Test if the customer ID is unique, not in use (yet)
 			#if (custid != row[0])
 			cust_id = rownum
-			cust_type = oil #Oil or gas? No info
-			cust_date = column[rownum][0]
+			cust_type = 'oil' #Oil or gas? No info
+			cust_date = column[lineno][0]
 
 			# Split up Name values into First Name, Last Name and assign to temp variable to put in Database
-			splitnames = colnum[ruwnum][1].split(' ')
+			splitnames = column[lineno][1].split(' ')
 			cust_first_name = splitnames[0] 
-			cust_last_name = splitnames[1]
+			if(splitnames.length()=1):
+				cust_last_name = splitnames[1]
+			if(splitnames.length()>=2):
+				cust_last_name = splitnames[1] + splitnames[1]
 			# END Name splitting
 
 			#Set Password to last name
-			cust_password = splitnames[1]
+			cust_password = 'Grogan' # deb#splitnames[1] 
 
 			# TODO Sanitixe if not enough address lines
-			splitaddr = colnum[ruwnum][2].split(' ')
+			splitaddr = column[lineno][2].split(' ')
 			cust_address1 = splitaddr[0]
-			cust_address2 = splitaddr[1]
-			cust_address3 = splitaddr[2]
-			cust_county = splitaddr[3]
+			if(splitaddr.length()=1):
+				cust_address2 = splitaddr[1]
+			elif(splitaddr.length()=2):
+				cust_address2 = splitaddr[1]
+				cust_address3 = splitaddr[2]
+			elif(splitaddr.length()>2):
+				cust_address2 = splitaddr[1]
+				cust_address3 = splitaddr[2]
+				cust_county = splitaddr[3]
 			# END address splitting
 
 			cust_geocode = '0.0,0.0' # Don't have info
@@ -93,24 +102,25 @@ def processCSVtoDB():
 			##########
 			# Services
 			##########
-			type_of_work = column[rownum][3] #Service/Install/Repair/Other
-			next_service = column[rownum][4] #Date of next service due
-			notes = column[rownum][5]
+			type_of_work = column[lineno][3] #Service/Install/Repair/Other
+			next_service = column[lineno][4] #Date of next service due
+			notes = column[lineno][5]
 
 			####################
 			# Service Statistics
 			####################
-			o2 = column[rownum][6]
-			coppm = column[rownum][7]
-			co2percent = column[rownum][8]
-			flumeTemp = column[rownum][9]
-			efficiency = column[rownum][10]
-			xsair = column[rownum][11]
+			o2 = column[lineno][6]
+			coppm = column[lineno][7]
+			co2percent = column[lineno][8]
+			flumeTemp = column[lineno][9]
+			efficiency = column[lineno][10]
+			xsair = column[lineno][11]
 
 			# Iterate after record is done
-			rownum += 1
-		rownum += 1
+			lineno += 1
+		lineno += 1
 	# Close the file  
+	print 'Closing file from reading'
 	readFile.close()
 	#processDBtoCSV() # debug
 		

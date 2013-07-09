@@ -1,4 +1,3 @@
-#import cgi
 import os
 #We will use the app.yaml file to point toward this file for all requests
 #We will then route requests from here.
